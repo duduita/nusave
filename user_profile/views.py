@@ -8,7 +8,7 @@ from django.http import HttpResponseRedirect
 from django.http import JsonResponse
 from django.urls import reverse
 
-CATEGORYS = ['Alimentação',
+CATEGORIES = ['Alimentação',
              'Assinatura e serviços',
              'Educacao',
              'Saude',
