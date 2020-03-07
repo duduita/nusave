@@ -17,7 +17,11 @@ CATEGORYS = ['Alimentação',
              'Saques',
              'Outros']
 
-FILTER = ['','','','']
+FILTER = ['Classe social',
+          'Idade',
+          'Região',
+          'Profissão']
+
 class LoginView(View):
     def get(self, request, *args, **kwargs):
         if request.user.is_authenticated:
