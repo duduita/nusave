@@ -24,7 +24,7 @@ class AuthUserManager(BaseUserManager):
         return self.create_user(*args, **kwargs)
 
 
-class NuUser(AbstractBaseUser, PermissionsMixin):
+class AbstractNuUser(AbstractBaseUser, PermissionsMixin):
     account_number = models.CharField(unique=True, max_length=100)
     email = models.EmailField(unique=True, max_length=255)
     date_joined = models.DateTimeField(auto_now_add=True)
@@ -33,3 +33,28 @@ class NuUser(AbstractBaseUser, PermissionsMixin):
     objects = AuthUserManager()
     ACCOUNT_NUMBER_FIELD = 'account_number'
     REQUIRED_FIELDS = ['email']
+
+class AbstractProfile(AbstractNuUser):
+    def __init__(self):
+        super().__init__()
+        self.level = 0
+        self.initial_money = 0
+        self.badges = []
+        self.warning = []
+
+class Person(AbstractProfile):
+    def __init__(self):
+        super().__init__()
+        self.food = []
+        self.services = []
+        self.education = []
+        self.health = []
+        self.transport = []
+        self.withdrawal = []
+        self.others = []
+
+class Expense:
+    def __init__(self, value, date):
+        self.value = value
+        self.date = date
+
