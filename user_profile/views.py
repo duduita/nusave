@@ -8,6 +8,16 @@ from django.http import HttpResponseRedirect
 from django.http import JsonResponse
 from django.urls import reverse
 
+CATEGORYS = ['Alimentação',
+             'Assinatura e serviços',
+             'Educacao',
+             'Saude',
+             'Roupas',
+             'Transporte',
+             'Saques',
+             'Outros']
+
+FILTER = ['','','','']
 class LoginView(View):
     def get(self, request, *args, **kwargs):
         if request.user.is_authenticated:
