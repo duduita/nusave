@@ -18,6 +18,7 @@ from django.urls import path
 from django.conf.urls import url
 import user_profile.views as profile_view
 import feed.views as feed_view
+
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('profile/', profile_view.index),

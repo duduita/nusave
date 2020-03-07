@@ -4,24 +4,32 @@ from django.contrib.auth.models import AbstractBaseUser, PermissionsMixin, BaseU
 from django.core.mail import EmailMessage
 from django.conf import settings
 from django.db import models
-from django import forms
 
-class User:
-    username = models.CharField(unique=True, max_length=100)
-    password = forms.CharField(widget = forms.PasswordInput, max_length = 16)
+
+class AuthUserManager(BaseUserManager):
+    def create_user(self, account_number, email, password=None):
+        if not account_number:
+            raise ValueError('Users must have an account number')
+        if not email:
+            raise ValueError('Users must have a email')
+
+        user = self.model(account_number=account_number,
+                          email=self.normalize_email(email))
+
+        user.set_password(password)
+        user.save(using=self._db)
+        return user
+
+    def create_superuser(self, *args, **kwargs):
+        return self.create_user(*args, **kwargs)
+
+
+class NuUser(AbstractBaseUser, PermissionsMixin):
+    account_number = models.CharField(unique=True, max_length=100)
     email = models.EmailField(unique=True, max_length=255)
+    date_joined = models.DateTimeField(auto_now_add=True)
     birth_date = models.DateTimeField(auto_now_add=True)
 
-class AdvancedUser(User):
-    def __init__(self):
-        self.gross_monthly_income = None
-        self.investment_suggestion = None
-        self.level = None
-        self.extern_evaluation = None
-        self.social_class = None
-        self.region = None
-        self.person_profile = None
-        self.age = None
-        self.likes = None
-        self.month_save_suggestion = None
-        self.badges = []
+    objects = AuthUserManager()
+    ACCOUNT_NUMBER_FIELD = 'account_number'
+    REQUIRED_FIELDS = ['email']
