@@ -1,0 +1,93 @@
+{
+  "Alimentacao": {
+    "Bruna": 6614.7659139622,
+    "Diego": 8153.5442680625,
+    "Alyssia": 900.2546284226,
+    "Lucia": 9539.9367192513,
+    "Paulo": 1792.0433155927
+  },
+  "Assinatura e servicos": {
+    "Bruna": 8532.7668131111,
+    "Diego": 1686.792937509,
+    "Alyssia": 3719.2347656826,
+    "Lucia": 4249.4478069166,
+    "Paulo": 9460.6247301033
+  },
+  "Classe": {
+    "Bruna": "A",
+    "Diego": "B",
+    "Alyssia": "C",
+    "Lucia": "D",
+    "Paulo": "E"
+  },
+  "Educacao": {
+    "Bruna": 3029.3471901121,
+    "Diego": 5310.3587655051,
+    "Alyssia": 949.8713856316,
+    "Lucia": 3610.160051562,
+    "Paulo": 6753.2674741529
+  },
+  "Filhos": {
+    "Bruna": "4+ filhos",
+    "Diego": "3 filhos",
+    "Alyssia": "2 filhos",
+    "Lucia": "1 filho",
+    "Paulo": "sem filhos"
+  },
+  "Idade": {
+    "Bruna": "50+",
+    "Diego": "35-50",
+    "Alyssia": "25-35",
+    "Lucia": "18-25",
+    "Paulo": "18-25"
+  },
+  "Mes": {
+    "Bruna": "janeiro",
+    "Diego": "marco",
+    "Alyssia": "abril",
+    "Lucia": "junho",
+    "Paulo": "outubro"
+  },
+  "Outros": {
+    "Bruna": 3946.7841862603,
+    "Diego": 4745.0427866622,
+    "Alyssia": 527.663261174,
+    "Lucia": 8151.5902023567,
+    "Paulo": 8306.0239460853
+  },
+  "Regiao": {
+    "Bruna": "metropolitana",
+    "Diego": "metropolitana",
+    "Alyssia": "metropolitana",
+    "Lucia": "interior",
+    "Paulo": "interior"
+  },
+  "Roupas": {
+    "Bruna": 4159.403506701,
+    "Diego": 1922.1278674832,
+    "Alyssia": 6023.003457152,
+    "Lucia": 5340.2690760709,
+    "Paulo": 6223.1464847289
+  },
+  "Saques": {
+    "Bruna": 9511.2072652845,
+    "Diego": 5410.4851512914,
+    "Alyssia": 2818.9509971272,
+    "Lucia": 6982.9460815223,
+    "Paulo": 6690.3445626251
+  },
+  "SaudeTransporte": {
+    "Bruna": 5072.5954053858,
+    "Diego": 4007.3507980938,
+    "Alyssia": 9114.766048519,
+    "Lucia": 4350.7557214329,
+    "Paulo": 1212.1078473432
+  },
+  "Sexo": {
+    "Bruna": "mulher",
+    "Diego": "homem",
+    "Alyssia": "mulher",
+    "Lucia": "mulher",
+    "Paulo": "homem"
+  }
+}
