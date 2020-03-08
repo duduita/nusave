@@ -6,8 +6,8 @@ class statistics():
     month_list = ['janeiro', 'fevereiro', 'marco', 'abril',
                   'maio', 'junho', 'julho', 'agosto',
                   'setembro', 'outubro', 'novembro', 'dezembro']
-    columns = ['Alimentacao', 'Assinatura e servicos', 'Educacao',
-               'Roupas', 'Saude', 'Transporte', 'Outros', 'Saques']
+    columns = ['Alimentacao', 'Assinatura_e_servicos', 'Educacao',
+               'Beleza', 'Saude', 'Transporte', 'Outros', 'Saques']
 
     def __init__(self, data, curr_month):
         '''
@@ -84,6 +84,7 @@ class statistics():
                                        & (data_month['Idade'] == category[2])
                                        & (data_month['Filhos'] == category[3])
                                        & (data_month['Sexo'] == category[4])
+                                       & (data_month['Estado_Civil'] == category[5])
                                        ]
             media = alfa * data_category[filter].quantile(quantile) + (1 - alfa) * media
             if (i > 0):

@@ -1,0 +1,91 @@
+{
+  "Alimentacao": {
+    "Bruna": 9760.2902747642,
+    "Diego": 2955.4599103432,
+    "Alyssia": 5.6044179013,
+    "Lucia": 9199.948519545,
+    "Paulo": 4738.5456304155
+  },
+  "Assinatura_e_servicos": {
+    "Bruna": 3699.8336235642,
+    "Diego": 8721.9866824743,
+    "Alyssia": 3028.0730489891,
+    "Lucia": 6644.5375558536,
+    "Paulo": 4214.156475968
+  },
+  "Beleza": {
+    "Bruna": 4963.4377643437,
+    "Diego": 2816.9096427377,
+    "Alyssia": 7341.8839934612,
+    "Lucia": 6303.804656237,
+    "Paulo": 8879.0077047226
+  },
+  "Classe": {
+    "Alyssia": "C",
+    "Bruna": "A",
+    "Diego": "B",
+    "Lucia": "D",
+    "Paulo": "E"
+  },
+  "Educacao": {
+    "Bruna": 9076.4516601979,
+    "Diego": 3977.3124503216,
+    "Alyssia": 3309.5043057832,
+    "Lucia": 1958.1724825504,
+    "Paulo": 3794.5323355465
+  },
+  "Estado_Civil": {
+    "Bruna": "solteiro",
+    "Diego": "relacionamento",
+    "Alyssia": "solteiro",
+    "Lucia": "relacionamento",
+    "Paulo": "solteiro"
+  },
+  "Filhos": {
+    "Bruna": "4+ filhos",
+    "Diego": "3 filhos",
+    "Alyssia": "2 filhos",
+    "Lucia": "1 filho",
+    "Paulo": "sem filhos"
+  },
+  "Idade": {
+    "Bruna": "50+",
+    "Diego": "35-50",
+    "Alyssia": "25-35",
+    "Lucia": "18-25",
+    "Paulo": "18-25"
+  },
+  "Outros": {
+    "Bruna": 654.6892407613,
+    "Diego": 6155.6941956369,
+    "Alyssia": 1045.3850991262,
+    "Lucia": 5185.9645539161,
+    "Paulo": 5699.712170413
+  },
+  "Regiao": {
+    "Alyssia": "metropolitana",
+    "Bruna": "metropolitana",
+    "Diego": "metropolitana",
+    "Lucia": "interior",
+    "Paulo": "interior"
+  },
+  "Saques": {
+    "Bruna": 3722.9467913049,
+    "Diego": 106.5988704617,
+    "Alyssia": 9056.0680844712,
+    "Lucia": 4182.8699863215,
+    "Paulo": 8392.4655358268
+  },
+  "SaudeTransporte": {
+    "Bruna": 2883.2935203909,
+    "Diego": 6430.6346216673,
+    "Alyssia": 5925.6515345065,
+    "Lucia": 1310.7308480917,
+    "Paulo": 7118.9022438012
+  },
+  "Sexo": {
+    "Bruna": "feminino",
+    "Diego": "masculino",
+    "Alyssia": "feminino",
+    "Lucia": "feminino","Paulo":"masculino"}
+}
