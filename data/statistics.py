@@ -20,3 +20,4 @@ def get_quantile(filter, mes, data):
 def get_expend(filter, user, mes, data):
     data_mes = data[data['Mes'] == mes]
     return data_mes[user][filter]
+
