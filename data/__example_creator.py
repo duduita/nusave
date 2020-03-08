@@ -8,7 +8,7 @@ contas = pd.read_csv('__example.csv', index_col=0)
 print(contas)
 columns = ['Alimentacao', 'Assinatura_e_servicos','Educacao', 'Beleza', 'Saude'
            'Transporte','Outros','Saques']
-category = ['A', 'metropolitana', '50+', '4+ filhos', 'mulher', 'solteiro']
+category = ['A', 'metropolitana', '30', '4', 'feminino', 'solteiro']
 data = []
 for i in range(0,12):
     data.append(contas)

@@ -1,1 +1,93 @@
-{"Classe":{"Bruna":"A","Diego":"B","Alyssia":"C","Lucia":"D","Paulo":"E"},"Regiao":{"Bruna":"metropolitana","Diego":"metropolitana","Alyssia":"metropolitana","Lucia":"interior","Paulo":"interior"},"Idade":{"Bruna":"50+","Diego":"35-50","Alyssia":"25-35","Lucia":"18-25","Paulo":"18-25"},"Filhos":{"Bruna":"4+ filhos","Diego":"3 filhos","Alyssia":"2 filhos","Lucia":"1 filho","Paulo":"sem filhos"},"Sexo":{"Bruna":"feminino","Diego":"masculino","Alyssia":"feminino","Lucia":"feminino","Paulo":"masculino"},"Estado_Civil":{"Bruna":"solteiro","Diego":"relacionamento","Alyssia":"solteiro","Lucia":"relacionamento","Paulo":"solteiro"},"Alimentacao":{"Bruna":3332.0803439087,"Diego":8291.1205023401,"Alyssia":384.1962341243,"Lucia":4783.080912934,"Paulo":7459.7726297654},"Assinatura_e_servicos":{"Bruna":5475.2890524537,"Diego":8720.3813448424,"Alyssia":8853.8442622375,"Lucia":2925.0908242544,"Paulo":3216.0332833766},"Educacao":{"Bruna":1180.8893650511,"Diego":6718.5475277383,"Alyssia":3237.4131153579,"Lucia":8479.0540676862,"Paulo":5341.2765846876},"Beleza":{"Bruna":396.2873062685,"Diego":531.9059708531,"Alyssia":6183.3230475445,"Lucia":5746.9524587281,"Paulo":9697.1730529598},"SaudeTransporte":{"Bruna":8654.5453643301,"Diego":9214.1210404937,"Alyssia":9590.326003457,"Lucia":6569.981364927,"Paulo":5340.2242887343},"Outros":{"Bruna":1712.6895475111,"Diego":8422.5018883798,"Alyssia":6348.5515255505,"Lucia":8116.7064661739,"Paulo":4244.3346070305},"Saques":{"Bruna":626.2664929961,"Diego":4887.3695071558,"Alyssia":1566.0531817266,"Lucia":4578.868737321,"Paulo":3621.689836422}}
+{
+  "Alimentacao": {
+    "Bruna": 3642.799487723,
+    "Diego": 7297.0044673086,
+    "Alyssia": 3257.7990310766,
+    "Lucia": 7003.9381059987,
+    "Paulo": 5120.1694992465
+  },
+  "Assinatura_e_servicos": {
+    "Bruna": 7821.4890904694,
+    "Diego": 8774.2168277734,
+    "Alyssia": 6657.5973705928,
+    "Lucia": 3448.3025076394,
+    "Paulo": 6176.6958110824
+  },
+  "Beleza": {
+    "Bruna": 5655.7596381629,
+    "Diego": 8132.6047429215,
+    "Alyssia": 2533.5741219856,
+    "Lucia": 2826.3385225336,
+    "Paulo": 7846.0982701981
+  },
+  "Classe": {
+    "Bruna": "A",
+    "Diego": "B",
+    "Alyssia": "C",
+    "Lucia": "D",
+    "Paulo": "E"
+  },
+  "Educacao": {
+    "Bruna": 4601.9508632228,
+    "Diego": 6344.1759749971,
+    "Alyssia": 2186.4619771535,
+    "Lucia": 6317.4175908238,
+    "Paulo": 2952.3672838227
+  },
+  "Estado_Civil": {
+    "Bruna": "solteiro",
+    "Diego": "relacionamento",
+    "Alyssia": "solteiro",
+    "Lucia": "relacionamento",
+    "Paulo": "solteiro"
+  },
+  "Filhos": {
+    "Bruna": 4,
+    "Diego": 3,
+    "Alyssia": 2,
+    "Lucia": 1,
+    "Paulo": 0
+  },
+  "Idade": {
+    "Bruna": 30,
+    "Diego": 20,
+    "Alyssia": 22,
+    "Lucia": 13,
+    "Paulo": 21
+  },
+  "Outros": {
+    "Bruna": 2444.0542706297,
+    "Diego": 5040.7666506732,
+    "Alyssia": 2125.097731655,
+    "Lucia": 6942.549416927,
+    "Paulo": 5272.4166139912
+  },
+  "Regiao": {
+    "Bruna": "metropolitana",
+    "Diego": "metropolitana",
+    "Alyssia": "metropolitana",
+    "Lucia": "interior",
+    "Paulo": "interior"
+  },
+  "Saques": {
+    "Bruna": 721.1595238511,
+    "Diego": 9704.0221126209,
+    "Alyssia": 4481.5886267578,
+    "Lucia": 7270.9604606579,
+    "Paulo": 1710.9306837525
+  },
+  "SaudeTransporte": {
+    "Bruna": 8166.5863713742,
+    "Diego": 5331.2792629581,
+    "Alyssia": 4449.1846847929,
+    "Lucia": 5800.6853968234,
+    "Paulo": 6134.713017375
+  },
+  "Sexo": {
+    "Bruna": "feminino",
+    "Diego": "masculino",
+    "Alyssia": "feminino",
+    "Lucia": "feminino",
+    "Paulo": "masculino"
+  }
+}

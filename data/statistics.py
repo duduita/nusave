@@ -23,9 +23,11 @@ class statistics():
             self.last_index = 11
 
     def getUserLastMonth(self, user, filter):
+        #retorna o os gasto total de certo usuario em certo filtro no mes passado
         return self.data[self.last_index][filter][user]
 
     def getUserAverage(self, user, filter):
+        #retorna a media exponencial movel do usuario contabilizando 11 meses passados para certo filtro
         media = 0
         alfa = 1 / 6
         i = self.last_index
@@ -46,6 +48,7 @@ class statistics():
         :param filter: tipo de gasto
         :return: media
         '''
+        #retorna a media exponencial movel da categoria  para certo filtro contabilizando 11 meses passados
         media = 0
         alfa = 1 / 6
         i = self.last_index
@@ -68,11 +71,13 @@ class statistics():
     def getCategoryPercentiles(self, category, filter, quantile):
         '''
 
-                :param category: array de strings
-                as strings que definem a categoria devem estar na exata ordem: Classe,Regiao,Idade,Filhos,Sexo
-                :param filter: tipo de gasto
-                :return: media
-                '''
+        :param category: array de strings as strings que definem a categoria devem
+        estar na exata ordem: Classe,Regiao,Idade,Filhos,Sexo,Estado_Civil
+        :param filter: tipo de gasto
+        :return: media
+        '''
+        #retorna os valores tal que desse valor para baixo estao uma fracao quantile
+        #do usuarios em determinado filtro e cateogria
         media = 0
         alfa = 1 / 6
         i = self.last_index
@@ -93,9 +98,10 @@ class statistics():
                 i = 11
         return media
 
-    def getUserLastMonthPercentage(self, user):
+    def getUserLastMonthPercentage(self, user, filter):
+        #retorna a fracao de gasto de certo filtro em relacao ao total do ultimo mes
         soma = 0
         for filter in statistics.columns:
             data_expends = self.data[self.last_index][filter]
             soma = soma + data_expends[user]
-        return soma
+        return self.data[self.last_index][filter][user]/soma

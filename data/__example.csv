@@ -1,6 +1,6 @@
 ,Classe,Regiao,Idade,Filhos,Sexo,Estado_Civil
-Bruna,A,metropolitana,50+,4+ filhos,feminino,solteiro
-Diego,B,metropolitana,35-50,3 filhos,masculino,relacionamento
-Alyssia,C,metropolitana,25-35,2 filhos,feminino,solteiro
-Lucia,D,interior,18-25,1 filho,feminino,relacionamento
-Paulo,E,interior,18-25,sem filhos,masculino,solteiro
+Bruna,A,metropolitana,30,4,feminino,solteiro
+Diego,B,metropolitana,20,3,masculino,relacionamento
+Alyssia,C,metropolitana,22,2,feminino,solteiro
+Lucia,D,interior,13,1,feminino,relacionamento
+Paulo,E,interior,21,0,masculino,solteiro
