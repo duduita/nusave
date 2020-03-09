@@ -19,7 +19,7 @@ class UserAdvisor(Statistics):
         processo = info[1]
         valor = float(info[2])
         if processo == 'entrada':
-            return self.__storingAdvice()
+            return self.__storingAdvice(ID, valor)
         elif processo == 'saida':
             filter = info[3]
             return self.__expendingAdvice(ID, valor, filter)
@@ -29,8 +29,13 @@ class UserAdvisor(Statistics):
     def __decodeInstruction(self, instruction: str):
         return instruction.split(sep=',')
 
-    def __storingAdvice(self):
-        return None
+    def __storingAdvice(self, ID: str, valor: float):
+        mean_user = self.getUserAverage(ID, 'entrada')
+        if (valor >= 0.5 * mean_user):
+            return '%s. Houve uma grande entrada na sua conta recentemente. Organize' \
+                   ' parte desse dinheiro para cuprir com a quest desse mes :).'% ID
+        else:
+            return None
 
     def __expendingAdvice(self, ID: str, valor: float, filter: str):
         mean_user = self.getUserAverage(ID, filter)
@@ -53,8 +58,11 @@ class UserAdvisor(Statistics):
                         'mesma situação que você.\n'
         else:
             mensagem2 = ''
-        return ('%s. ' % ID) + mensagem1 + mensagem2 + 'Verifique seus gastos e ' \
-                                                       'analise se entao de acordo com os seus planos financeiros'
+        if (mensagem1 != '') | (mensagem2 != ''):
+            return ('%s. ' % ID) + mensagem1 + mensagem2 + 'Verifique seus gastos e ' \
+                                                           'analise se entao de acordo com os seus planos financeiros'
+        else:
+            return None
 
     def __userCategory(self, ID: str):
         #retorna uma lista em ordem protocolada das caracteristicas que compoem a

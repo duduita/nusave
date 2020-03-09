@@ -14,7 +14,7 @@ class Statistics(GeneralInfo):
         '''
         self.data = data
         self.curr_index = Statistics.month_list.index(curr_month)
-        if (self.curr_index > 0):
+        if self.curr_index > 0:
             self.last_index = self.curr_index - 1
         else:
             self.last_index = 11
@@ -108,12 +108,12 @@ class Statistics(GeneralInfo):
                         ]
 
     def __setLimits(self, value, pins):
-        Pins_use = pins.copy()
-        Pins_use.append(value)
-        Pins_use.sort()
-        limit_min = Pins_use[Pins_use.index(value) - 1]
-        limit_max = Pins_use[Pins_use.index(value) + 1]
+        pins_use = pins.copy()
+        pins_use.append(value)
+        pins_use.sort()
+        limit_min = pins_use[pins_use.index(value) - 1]
+        limit_max = pins_use[pins_use.index(value) + 1]
         if (value == limit_max):
-            limit_min = Pins_use[Pins_use.index(value)]
-            limit_max = Pins_use[Pins_use.index(value) + 2]
+            limit_min = pins_use[pins_use.index(value)]
+            limit_max = pins_use[pins_use.index(value) + 2]
         return [limit_min, limit_max]

@@ -8,5 +8,6 @@ class GeneralInfo():
     filter_list = ['Alimentacao', 'Assinatura_e_servicos', 'Educacao',
                    'Beleza', 'Saude', 'Transporte', 'Outros', 'Saques']
     category_list = ['Classe','Regiao','Idade','Dependentes','Sexo','Estado_Civil']
+    info_list = ['Entrada', 'Saldo']
     age_pins = [0, 25, 35, 50, inf]
     dependant_pins = [0, 1, 2, 3, 4, inf]
