@@ -2,5 +2,5 @@ Classe{A, B, C, D, E}
 Regiao{metropolitana, interior}
 Idade{18-25, 26-35, 36-50, 50+}(na pratica vai estar um int)
 Sexo{masculino, feminino}
-Filhos{0,1,2,3,4+}(na pratica vai estar um int)
+Dependentes{0,1,2,3,4+}(na pratica vai estar um int)
 Estado_Civil{solteiro, relacionamento}
