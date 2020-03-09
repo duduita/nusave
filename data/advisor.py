@@ -30,7 +30,7 @@ class UserAdvisor(Statistics):
         return instruction.split(sep=',')
 
     def __storingAdvice(self):
-        pass
+        return None
 
     def __expendingAdvice(self, ID: str, valor: float, filter: str):
         mean_user = self.getUserAverage(ID, filter)
