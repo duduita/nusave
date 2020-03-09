@@ -1,16 +1,10 @@
 import pandas as pd
 import numpy as np
 from math import inf
+from general_info import GeneralInfo
 
 
-class statistics():
-    month_list = ['janeiro', 'fevereiro', 'marco', 'abril',
-                  'maio', 'junho', 'julho', 'agosto',
-                  'setembro', 'outubro', 'novembro', 'dezembro']
-    columns = ['Alimentacao', 'Assinatura_e_servicos', 'Educacao',
-               'Beleza', 'Saude', 'Transporte', 'Outros', 'Saques']
-    age_pins = [0, 25, 35, 50, inf]
-    dependant_pins = [0, 1, 2, 3, 4, inf]
+class Statistics(GeneralInfo):
 
     def __init__(self, data, curr_month):
         '''
@@ -19,24 +13,24 @@ class statistics():
         :param curr_month: mes atual
         '''
         self.data = data
-        self.curr_index = statistics.month_list.index(curr_month)
+        self.curr_index = Statistics.month_list.index(curr_month)
         if (self.curr_index > 0):
             self.last_index = self.curr_index - 1
         else:
             self.last_index = 11
 
-    def getUserLastMonth(self, user, filter):
+    def getUserLastMonth(self, ID, filter):
         # retorna o os gasto total de certo usuario em certo filtro no mes passado
-        return self.data[self.last_index][filter][user]
+        return self.data[self.last_index][filter][ID]
 
-    def getUserAverage(self, user, filter):
+    def getUserAverage(self, ID, filter):
         # retorna a media exponencial movel do usuario contabilizando 11 meses passados para certo filtro
         media = 0
         alfa = 1 / 6
         i = self.last_index
 
         while (i != self.curr_index):
-            media = alfa * self.data[i][filter][user] + (1 - alfa) * media
+            media = alfa * self.data[i][filter][ID] + (1 - alfa) * media
             if (i > 0):
                 i = i - 1
             else:
@@ -90,13 +84,13 @@ class statistics():
                 i = 11
         return media
 
-    def getUserLastMonthPercentage(self, user, filter):
+    def getUserLastMonthPercentage(self, ID, filter):
         # retorna a fracao de gasto de certo filtro em relacao ao total do ultimo mes
         soma = 0
-        for filter in statistics.columns:
+        for filter in Statistics.filter_list:
             data_expends = self.data[self.last_index][filter]
-            soma = soma + data_expends[user]
-        return self.data[self.last_index][filter][user] / soma
+            soma = soma + data_expends[ID]
+        return self.data[self.last_index][filter][ID] / soma
 
     def __getClustering(self, dataframe, category):
         data_aux = dataframe[(dataframe['Classe'] == category[0])
@@ -104,8 +98,8 @@ class statistics():
                              & (dataframe['Sexo'] == category[4])
                              & (dataframe['Estado_Civil'] == category[5])
                              ]
-        dep_limit = self.__setLimits(category[3], statistics.dependant_pins)
-        age_limit = self.__setLimits(category[2], statistics.age_pins)
+        dep_limit = self.__setLimits(category[3], Statistics.dependant_pins)
+        age_limit = self.__setLimits(category[2], Statistics.age_pins)
 
         return data_aux[(age_limit[0] <= data_aux['Idade'])
                         & (age_limit[1] > data_aux['Idade'])
