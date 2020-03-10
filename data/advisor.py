@@ -5,6 +5,8 @@ from statistics import Statistics
 
 class UserAdvisor(Statistics):
     # notice that statistics is a class(data, curr_month)
+    def __init__(self, data, curr_month):
+        super().__init__(data, curr_month)
 
     def readInstruction(self, instruction: str):
         '''
@@ -63,12 +65,3 @@ class UserAdvisor(Statistics):
                                                            'analise se entao de acordo com os seus planos financeiros'
         else:
             return None
-
-    def __userCategory(self, ID: str):
-        #retorna uma lista em ordem protocolada das caracteristicas que compoem a
-        #categoria do usuario
-        user_category = []
-        data_user = self.data.loc[ID]
-        for category in UserAdvisor.category_list:
-            user_category.append(data_user[category])
-        return user_category

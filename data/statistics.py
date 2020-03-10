@@ -1,6 +1,4 @@
-import pandas as pd
-import numpy as np
-from math import inf
+
 from general_info import GeneralInfo
 
 
@@ -12,7 +10,7 @@ class Statistics(GeneralInfo):
         :param data: array de DataFrames
         :param curr_month: mes atual
         '''
-        self.data = data
+        super().__init__(data)
         self.curr_index = Statistics.month_list.index(curr_month)
         if self.curr_index > 0:
             self.last_index = self.curr_index - 1
@@ -37,7 +35,7 @@ class Statistics(GeneralInfo):
                 i = 11
         return media
 
-    def getCategoryAverage(self, category, filter):
+    def getCategoryAverage(self, ID, filter):
         '''
 
         :param category: n-upla de strings e ints, as informacoes que definem a
@@ -46,6 +44,7 @@ class Statistics(GeneralInfo):
         :return: media
         '''
         # retorna a media exponencial movel da categoria  para certo filtro contabilizando 11 meses passados
+        category = self.__userCategory(ID)
         media = 0
         alfa = 1 / 6
         i = self.last_index
@@ -60,7 +59,7 @@ class Statistics(GeneralInfo):
                 i = 11
         return media
 
-    def getCategoryPercentiles(self, category, filter, quantile):
+    def getCategoryPercentiles(self, ID, filter, quantile):
         '''
 
         :param category: array de strings as strings que definem a categoria devem
@@ -70,6 +69,7 @@ class Statistics(GeneralInfo):
         '''
         # retorna os valores tal que desse valor para baixo estao uma fracao quantile
         # do usuarios em determinado filtro e cateogria
+        category = self.__userCategory(ID)
         media = 0
         alfa = 1 / 6
         i = self.last_index
