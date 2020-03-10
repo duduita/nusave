@@ -10,8 +10,10 @@ class GeneralInfo():
                    'Beleza', 'Saude', 'Transporte', 'Outros', 'Saques']
     category_list = ['Classe','Regiao','Idade','Dependentes','Sexo','Estado_Civil']
     info_list = ['Entrada', 'Saldo']
-    age_pins = [0, 25, 35, 50, inf]
-    dependant_pins = [0, 1, 2, 3, 4, inf]
+    age_pins = [-1, 25, 35, 50, inf]
+    dependant_pins = [-1, 1, 2, 3, 4, inf]
+    xp_pins = [-1, 50, 200, 450, 800, 1250, 1800, 2450, 3200, 4050, 5000, 6050, 7200, 8450,
+               9800, 11250, 12800, 14450, 16200, 18050, inf]
 
     def __init__(self):
         data = []

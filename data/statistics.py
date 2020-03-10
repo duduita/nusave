@@ -97,8 +97,8 @@ class Statistics(GeneralInfo):
                              & (dataframe['Sexo'] == category[4])
                              & (dataframe['Estado_Civil'] == category[5])
                              ]
-        dep_limit = self.__setLimits(category[3], Statistics.dependant_pins)
-        age_limit = self.__setLimits(category[2], Statistics.age_pins)
+        dep_limit = self._setLimits(category[3], Statistics.dependant_pins)
+        age_limit = self._setLimits(category[2], Statistics.age_pins)
 
         return data_aux[(age_limit[0] <= data_aux['Idade'])
                         & (age_limit[1] > data_aux['Idade'])
@@ -106,7 +106,7 @@ class Statistics(GeneralInfo):
                         & (dep_limit[1] > data_aux['Dependentes'])
                         ]
 
-    def __setLimits(self, value, pins):
+    def _setLimits(self, value, pins):
         pins_use = pins.copy()
         pins_use.append(value)
         pins_use.sort()
