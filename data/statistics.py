@@ -4,14 +4,14 @@ from general_info import GeneralInfo
 
 class Statistics(GeneralInfo):
 
-    def __init__(self, data, curr_month):
+    def __init__(self):
         '''
 
         :param data: array de DataFrames
         :param curr_month: mes atual
         '''
-        super().__init__(data)
-        self.curr_index = Statistics.month_list.index(curr_month)
+        super().__init__()
+        self.curr_index = Statistics.month_list.index(self.curr_month)
         if self.curr_index > 0:
             self.last_index = self.curr_index - 1
         else:

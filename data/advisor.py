@@ -5,8 +5,8 @@ from statistics import Statistics
 
 class UserAdvisor(Statistics):
     # notice that statistics is a class(data, curr_month)
-    def __init__(self, data, curr_month):
-        super().__init__(data, curr_month)
+    def __init__(self):
+        super().__init__()
 
     def readInstruction(self, instruction: str):
         '''

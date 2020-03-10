@@ -1,5 +1,6 @@
-a = 'fevereiro'
-b = a
-c = a
-b = 'marco'
-print(c)
+import pandas as pd
+
+from statistics import Statistics
+
+st = Statistics()
+st.getCategoryAverage
