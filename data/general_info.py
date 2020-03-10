@@ -1,5 +1,5 @@
 from math import inf
-from pandas import pd
+import pandas as pd
 
 
 class GeneralInfo():
@@ -17,15 +17,17 @@ class GeneralInfo():
         data = []
         for month in GeneralInfo.month_list:
             dataframe = pd.read_json('./monthjson/'+month + '.json')
+            dataframe.set_index(inplace=True, keys='Nome')
             data.append(dataframe)
         self.data = data
-        curr_month = pd.read_json('curr_month')
-        self.curr_month = curr_month
+        curr_month = pd.read_json('curr_month.json')
+        self.curr_month = curr_month['month'][0]
 
-    def __userCategory(self, ID: str):
+    def _userCategory(self, ID: str):
         #retorna uma lista em ordem protocolada das caracteristicas que compoem a
         #categoria do usuario
         user_category = []
+        print(ID)
         data_user = self.data[0].loc[ID]
         for category in GeneralInfo.category_list:
             user_category.append(data_user[category])

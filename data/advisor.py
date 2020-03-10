@@ -1,10 +1,8 @@
-import pandas as pd
-import numpy as np
 from statistics import Statistics
 
 
 class UserAdvisor(Statistics):
-    # notice that statistics is a class(data, curr_month)
+
     def __init__(self):
         super().__init__()
 
@@ -32,7 +30,7 @@ class UserAdvisor(Statistics):
         return instruction.split(sep=',')
 
     def __storingAdvice(self, ID: str, valor: float):
-        mean_user = self.getUserAverage(ID, 'entrada')
+        mean_user = self.getUserAverage(ID, 'Entrada')
         if (valor >= 0.5 * mean_user):
             return '%s. Houve uma grande entrada na sua conta recentemente. Organize' \
                    ' parte desse dinheiro para cuprir com a quest desse mes :).'% ID
@@ -49,8 +47,7 @@ class UserAdvisor(Statistics):
             mensagem1 = 'Já foi gasto mais do que o esperado para você esse mês.\n'
         else:
             mensagem1 = ''
-        user_category = self.__userCategory(ID)
-        mean_category = self.getCategoryAverage(user_category, filter)
+        mean_category = self.getCategoryAverage(ID, filter)
         if (valor >= 0.8 * mean_category) & (valor <= mean_category):
             percentual = 100 * valor / mean_category
             mensagem2 = 'Já foram gastos %.0f%% da média projetada para pessoas na ' \

@@ -1,4 +1,3 @@
-
 from general_info import GeneralInfo
 
 
@@ -44,7 +43,7 @@ class Statistics(GeneralInfo):
         :return: media
         '''
         # retorna a media exponencial movel da categoria  para certo filtro contabilizando 11 meses passados
-        category = self.__userCategory(ID)
+        category = self._userCategory(ID)
         media = 0
         alfa = 1 / 6
         i = self.last_index
@@ -69,7 +68,7 @@ class Statistics(GeneralInfo):
         '''
         # retorna os valores tal que desse valor para baixo estao uma fracao quantile
         # do usuarios em determinado filtro e cateogria
-        category = self.__userCategory(ID)
+        category = self._userCategory(ID)
         media = 0
         alfa = 1 / 6
         i = self.last_index
