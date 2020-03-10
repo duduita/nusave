@@ -6,8 +6,12 @@ from advisor import UserAdvisor
 
 
 class DataAPI:
+    '''
+    Nao se trata bem de uma API mas sim de uma classe com uma funcao que permite acessar
+    features de dados de maneira mais facil ao desenvolvedor do back
+    '''
 
-    def ReadInstructions(self, instruction: json):
+    def readInstructions(self, instruction: json):
         info = json.loads(instruction)
         feature = info['feature']
         if feature == 'statistics':
@@ -15,19 +19,20 @@ class DataAPI:
         if feature == 'advisor':
             return self.__advisorAct(info)
 
-
-
     def __statisticAct(self, info):
         stat = Statistics()
-        request = info['request']
-        if request == 'get_user_last_month':
-            return stat.getUserLastMonth(info['ID'], info['filter'])
-        if request == 'get_user_average':
-            return stat.getUserAverage(info['ID'], info['filter'])
-        if request == 'get_category_average':
-            return stat.getCategoryAverage(info['ID'], info['filter'])
-        if request == 'get_category_percentiles':
-            return stat.getCategoryPercentiles(info['ID'], info['filter'])
+        percents = [10, 20, 30, 40, 50, 60, 70, 80, 90, 100]
+        dict = {}
+        dict["user_ID"] = info['ID']
+        dict["user_last_month"] = stat.getUserLastMonth(info['ID'], info['filter'])
+        dict["user_average"] = stat.getUserAverage(info['ID'], info['filter'])
+        dict["category_average"] = stat.getCategoryAverage(info['ID'], info['filter'])
+        percentiles = {}
+        for percentage in percents:
+            percentiles[percentage] = stat.getCategoryPercentiles(info['ID'],
+                                                                  info['filter'], percentage / 100)
+        dict["category_percentiles"] = percentiles
+        return json.dumps(dict)
 
     def __advisorAct(self, info):
         adv = UserAdvisor()
@@ -41,4 +46,3 @@ class DataAPI:
             filter = info['filter']
             instruction = ID + ',' + action + ',' + value + ',' + filter
             return adv.readInstruction(instruction)
-

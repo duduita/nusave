@@ -4,7 +4,7 @@ from statistics import Statistics
 class RPGFrame(Statistics):
     level_pins = []
 
-    def __init__(self, rpg_data, data, curr_month):
+    def __init__():
         super(RPGFrame, self).__init__(data, curr_month)
         self.rpg_data = rpg_data
 

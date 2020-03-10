@@ -27,7 +27,6 @@ class GeneralInfo():
         #retorna uma lista em ordem protocolada das caracteristicas que compoem a
         #categoria do usuario
         user_category = []
-        print(ID)
         data_user = self.data[0].loc[ID]
         for category in GeneralInfo.category_list:
             user_category.append(data_user[category])

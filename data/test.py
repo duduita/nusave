@@ -1,6 +1,12 @@
-import pandas as pd
+from data_API import DataAPI
+import json
 
-from statistics import Statistics
+api = DataAPI()
+x = {
+    "ID": "TNWODTCZYPQHMWMFUHAS",
+    "feature": "statistics",
+    "filter": "Beleza"
+}
+x = json.dumps(x)
 
-st = Statistics()
-st.getCategoryAverage
+print(json.loads(api.readInstructions(x)))
