@@ -1,4 +1,4 @@
-from data/data_API import DataAPI
+from data_API import DataAPI
 import json
 import random as rd
 import pandas as pd
@@ -22,13 +22,10 @@ for i in range(0, n):
     quest.append(0)
 frame = {'Xp': xp, 'Level': level, 'Quest': quest}
 rpg_data = pd.DataFrame(frame)
-
 rpg_data["Nome"] = nome
-rpg_data.set_index('Nome')
-
 rpg_data.to_json('rpg_data.json')
-
 print(rpg_data)
+
 
 
 

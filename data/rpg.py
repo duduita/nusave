@@ -2,16 +2,28 @@ from statistics import Statistics
 import pandas as pd
 
 class RPGFrame(Statistics):
-    level_pins = []
 
     def __init__(self):
         super().__init__()
         self.rpg_data = pd.read_json('rpg_data.json')
+        self.rpg_data.set_index('Nome', inplace=True)
 
-    def updateRPG(self, ID):
+    def updateRPG(self):
+        self.__updateLevel()
+        self.rpg_data.reset_index(inplace=True)
+        #qualquer dataset armazenado em um json file tem que esta com a indexacao nativa(numerica)
+        self.rpg_data.to_json('rpg_data.json')
+        self.rpg_data.set_index('Nome', inplace=True)
+        
+    def userRPGInfo(self, ID):
+        ''':return DataFrame'''
+        return self.rpg_data.loc[ID]
 
 
     def __updateLevel(self):
+        #da reward
+        #atualiza os niveis
+        #atualiza as missoes mensais
         for ID in self.rpg_data['Nome']:
             if(self.__wasSuccessful(ID)):
                 self.rpg_data['Xp'][ID] = self.rpg_data['Xp'][ID] + 50
